@@ -3,72 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo af WebComponent</title>
+    <title>Dice-component</title>
   </head>
   <body>
-    <h1>Demo af WebComponent</h1>
+    <h1>Simple demo og a web component</h1>
 
-    <h2>Terning uden argumenter</h2>
-    <cronberg-terning></cronberg-terning>
+    <p>This is a simple demo of a web component.</p>
 
-    <h2>Snyde terning</h2>
-    <cronberg-terning snyd="true"></cronberg-terning>
+    <h2>Dice without arguments</h2>
+    <cronberg-dice></cronberg-dice>
 
-    <h2>Mange snydeterninger</h2>
-    <cronberg-terning snyd="true"></cronberg-terning>
-    <cronberg-terning snyd="true"></cronberg-terning>
-    <cronberg-terning snyd="true"></cronberg-terning>
-    <cronberg-terning snyd="true"></cronberg-terning>
-    <cronberg-terning snyd="true"></cronberg-terning>
+    <h2>A fex cheat dices (last three has color)</h2>
+    <cronberg-dice cheat="true"></cronberg-dice>
+    <cronberg-dice cheat="true"></cronberg-dice>
+    <cronberg-dice cheat="true"></cronberg-dice>
+    <cronberg-dice cheat="true" backgroundcolorsix="green" forgroundcolorsix="white"></cronberg-dice>
+    <cronberg-dice cheat="true" backgroundcolorsix="green" forgroundcolorsix="white"></cronberg-dice>
+    <cronberg-dice cheat="true" backgroundcolorsix="green" forgroundcolorsix="white"></cronberg-dice>
 
-    <h2>Nogle terninger med farve ved sekser (og snyd)</h2>
-    <cronberg-terning
-      sekserforgrundsfarve="white"
-      sekserbaggrundsfarve="green"
-      snyd="true"
-    ></cronberg-terning>
-    <cronberg-terning
-      sekserforgrundsfarve="white"
-      sekserbaggrundsfarve="green"
-      snyd="true"
-    ></cronberg-terning>
-    <cronberg-terning
-      sekserforgrundsfarve="white"
-      sekserbaggrundsfarve="green"
-      snyd="true"
-    ></cronberg-terning>
-    <cronberg-terning
-      sekserforgrundsfarve="white"
-      sekserbaggrundsfarve="green"
-      snyd="true"
-    ></cronberg-terning>
-    <cronberg-terning
-      sekserforgrundsfarve="white"
-      sekserbaggrundsfarve="green"
-      snyd="true"
-    ></cronberg-terning>
+    <h2>Shake a dice</h2>
+    <cronberg-dice id="dice1"></cronberg-dice>
+    <button id="shake1">Shake</button>
 
-    <h2>Terning med en ryst mulighed</h2>
-    <cronberg-terning id="terning1"></cronberg-terning>
-    <button id="ryst1">Ryst</button>
+    <h2>Dice with log (see console)</h2>
+    <cronberg-dice id="dice2" debug="true" backgroundcolorsix="green" forgroundcolorsix="white"></cronberg-dice>
+    <button id="shake2">Shake</button>
 
-    <h2>Terning med log (se console)</h2>
-    <cronberg-terning
-      id="terning2"
-      debug="true"
-      sekserforgrundsfarve="white"
-      sekserbaggrundsfarve="green"
-    ></cronberg-terning>
-    <button id="ryst2">Ryst</button>
-
-    <script src="terning.js"></script>
+    <script src="dice.js"></script>
 
     <script>
-      document.getElementById("ryst1").onclick = () => {
-        document.getElementById("terning1").ryst();
+      document.getElementById("shake1").onclick = () => {
+        document.getElementById("dice1").shake();
       };
-      document.getElementById("ryst2").onclick = () => {
-        document.getElementById("terning2").ryst();
+      document.getElementById("shake2").onclick = () => {
+        document.getElementById("dice2").shake();
       };
     </script>
   </body>
